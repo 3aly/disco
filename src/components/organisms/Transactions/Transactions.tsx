@@ -2,17 +2,8 @@ import {t} from 'i18next';
 import React, {useRef, useEffect, useState, memo} from 'react';
 
 import styles from './Transactions.styles';
-import {
-  FlatList,
-  Dimensions,
-  Platform,
-  I18nManager,
-  View,
-  Pressable,
-  Text,
-} from 'react-native';
-// import { colors } from "@constants/styles";
-import {Transaction, TransactionsHeader} from '@components/molecules';
+import {FlatList} from 'react-native';
+import {Transaction, TransactionsHeader} from '/components/molecules';
 
 type props = {};
 

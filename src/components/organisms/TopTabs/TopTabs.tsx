@@ -12,7 +12,7 @@ import {
   Pressable,
   Text,
 } from 'react-native';
-import {colors} from '@constants/styles';
+import {colors} from '/constants/styles';
 
 type ITap = {
   id: number;

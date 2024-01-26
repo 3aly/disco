@@ -1,5 +1,5 @@
-import {colors, layouts, spacing} from '@constants/styles';
-import px from '@utils/responsiveUI';
+import {colors, layouts, spacing} from '/constants/styles';
+import px from '/utils/responsiveUI';
 import {StyleSheet} from 'react-native';
 
 export default StyleSheet.create({

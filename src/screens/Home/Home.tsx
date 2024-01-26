@@ -1,8 +1,8 @@
 import {View, Text} from 'react-native';
 import React, {useState} from 'react';
 import styles from './Home.styles';
-import {TopTabs, TotalExpenses, Transactions} from '@components/organisms';
-import {Header} from '@components/molecules';
+import {TopTabs, TotalExpenses, Transactions} from '/components/organisms';
+import {Header} from '/components/molecules';
 
 const Home = () => {
   const [selectedTab, setSelectedTab] = useState(0);

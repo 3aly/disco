@@ -4,10 +4,9 @@ import React, {useRef, useEffect, useState, memo} from 'react';
 import styles from './Transactions.styles';
 import {FlatList} from 'react-native';
 import {Transaction, TransactionsHeader} from '/components/molecules';
+import {TransactionsProps} from 'types';
 
-type props = {};
-
-const Transactions = ({}: props) => {
+const Transactions = ({Transactions}: TransactionsProps) => {
   const expensesData = [
     {title: 'Rent', percentage: 30, date: '2014/01/01'},
     {title: 'Groceries', percentage: 25, date: '2014/01/01'},
@@ -15,19 +14,26 @@ const Transactions = ({}: props) => {
     {title: 'Entertainment', percentage: 10, date: '2014/01/01'},
     {title: 'Others', percentage: 20, date: '2014/01/01'},
   ];
+  console.log('Transactions', Transactions);
 
   return (
     <>
       <TransactionsHeader title="Transactions" />
       <FlatList
-        data={expensesData}
-        renderItem={({item}) => (
-          <Transaction
-            title={item.title}
-            invoice={item.percentage}
-            date={item.date}
-          />
-        )}
+        data={Transactions}
+        renderItem={({item}) => {
+          console.log('item: ', item);
+          return (
+            <>
+              <Transaction
+                image={item.image}
+                title={item.title}
+                invoice={item.price}
+                date={item.date}
+              />
+            </>
+          );
+        }}
         // ListHeaderComponent={ListHeaderComponent}
       />
     </>

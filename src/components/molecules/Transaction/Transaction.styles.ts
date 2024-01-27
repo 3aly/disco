@@ -11,11 +11,21 @@ export default StyleSheet.create({
     ...layouts.py.md,
     ...layouts.px.xl,
   },
-  date: {color: 'black'},
+
+  date: {color: colors.grey},
   title: {
     fontSize: px(14),
     color: 'black',
   },
-  icon: {},
+  dataContainer: {
+    ...layouts.row,
+    ...layouts.justifyBetween,
+  },
+  image: {
+    width: 50,
+    height: 50,
+    borderRadius: px(25),
+    ...layouts.me.xl,
+  },
   percentage: {fontSize: px(16), color: 'black'},
 });

@@ -4,7 +4,6 @@ import {StyleSheet} from 'react-native';
 
 export default StyleSheet.create({
   container: {
-    backgroundColor: 'white',
     ...layouts.row,
     ...layouts.justifyBetween,
     ...layouts.yCentered,
@@ -12,7 +11,6 @@ export default StyleSheet.create({
     ...layouts.px.xxl,
   },
   data: {
-    backgroundColor: 'white',
     ...layouts.row,
     ...layouts.justifyBetween,
     ...layouts.yCentered,
@@ -20,6 +18,7 @@ export default StyleSheet.create({
   title: {
     fontSize: px(20),
     color: 'black',
+    ...layouts.ms.md,
   },
   icon: {},
   percentage: {fontSize: px(20), color: 'black'},

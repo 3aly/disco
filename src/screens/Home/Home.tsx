@@ -1,15 +1,52 @@
 import {View, Text} from 'react-native';
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import styles from './Home.styles';
 import {Header, TopTabs, TotalExpenses, Transactions} from 'components';
+import {useFetchExpenses, useFetchTransactions} from 'hooks';
+import {
+  generateRandomDate,
+  generateRandomIcon,
+  generateRandomLabel,
+} from 'utils';
+import {ExpensesType, TransactionType} from 'types';
 
 const Home = () => {
   const [selectedTab, setSelectedTab] = useState(0);
+  const [alteredTransactions, setAlteredTransactions] = useState<
+    Array<TransactionType>
+  >([]);
+  const [alteredExpenses, setAlteredExpenses] = useState<Array<ExpensesType>>(
+    [],
+  );
 
   const handlePress = (_: string, id: number) => {
     setSelectedTab(id);
   };
-  console.log('selectedTab', selectedTab);
+  const {data: TransactionsData, isLoading: isTransactionsLoading} =
+    useFetchTransactions();
+  const {data: ExpensesData, isLoading: isExpensesLoading} = useFetchExpenses();
+  useEffect(() => {
+    const tamp = TransactionsData?.map((item: TransactionType) => {
+      return {
+        ...item,
+        date: generateRandomDate(),
+        label: generateRandomLabel(),
+      };
+    });
+
+    setAlteredTransactions(tamp);
+  }, [TransactionsData]);
+  useEffect(() => {
+    const temp = ExpensesData?.map((item: TransactionType) => {
+      return {
+        ...item,
+        label: generateRandomLabel(),
+
+        icon: generateRandomIcon(),
+      };
+    });
+    setAlteredExpenses(temp);
+  }, [ExpensesData]);
 
   return (
     <View style={styles.container}>
@@ -35,12 +72,38 @@ const Home = () => {
       />
       {selectedTab === 0 && (
         <>
-          <TotalExpenses />
-          <Transactions />
+          <TotalExpenses Expenses={alteredExpenses} />
+          <Transactions Transactions={alteredTransactions} />
         </>
       )}
-      {selectedTab === 1 && <Text>second tab</Text>}
-      {selectedTab === 2 && <Text>third tab</Text>}
+      {selectedTab === 1 && (
+        <>
+          <TotalExpenses
+            Expenses={alteredExpenses.filter(item => {
+              return item.label === 'Personal';
+            })}
+          />
+          <Transactions
+            Transactions={alteredTransactions.filter(item => {
+              return item.label === 'Personal';
+            })}
+          />
+        </>
+      )}
+      {selectedTab === 2 && (
+        <>
+          <TotalExpenses
+            Expenses={alteredExpenses.filter(item => {
+              return item.label === 'Personal';
+            })}
+          />
+          <Transactions
+            Transactions={alteredTransactions.filter(item => {
+              return item.label === 'Work';
+            })}
+          />
+        </>
+      )}
     </View>
   );
 };

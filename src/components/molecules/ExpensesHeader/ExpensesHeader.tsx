@@ -9,8 +9,8 @@ const ExpensesHeader = ({
   title: string;
   targetAmount: number;
 }) => {
-  const animationDuration = 500; // in milliseconds
-  const framesPerSecond = 60; // adjust as needed
+  const animationDuration = 500;
+  const framesPerSecond = 60;
 
   const [currentValue, setCurrentValue] = useState(0);
   const totalFrames = (animationDuration / 1000) * framesPerSecond;

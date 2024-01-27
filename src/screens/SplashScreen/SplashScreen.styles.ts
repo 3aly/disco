@@ -1,9 +1,9 @@
-import {layouts} from '/constants/styles';
 import {StyleSheet} from 'react-native';
 
 const styles = StyleSheet.create({
   container: {
-    ...layouts.allCentered,
+    width: '100%',
+    height: '100%',
   },
 });
 

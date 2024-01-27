@@ -1,4 +1,4 @@
-import px from '@utils/responsiveUI';
+import px from '/utils/responsiveUI';
 import {ViewStyle} from 'react-native';
 
 export const spacing = {
@@ -252,11 +252,4 @@ export const layouts = {
 
   // text decoration
   underlined: {textDecorationLine: 'underline'} as ViewStyle,
-};
-export const colors = {
-  primary: '#0052CC',
-  secondary: '#33C2E3',
-  green: '#59BA47',
-  red: '#E5233D',
-  yellow: '#FFC828',
 };

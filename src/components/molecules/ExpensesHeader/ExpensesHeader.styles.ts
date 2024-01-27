@@ -1,5 +1,5 @@
-import {colors, layouts, spacing} from '@constants/styles';
-import px from '@utils/responsiveUI';
+import {colors, layouts, spacing} from '/constants/styles';
+import px from '/utils/responsiveUI';
 import {StyleSheet} from 'react-native';
 
 export default StyleSheet.create({
@@ -15,6 +15,7 @@ export default StyleSheet.create({
   title: {
     fontSize: px(12),
     fontWeight: 'bold',
+    color: 'black',
   },
   icon: {
     borderWidth: 1,
@@ -26,6 +27,7 @@ export default StyleSheet.create({
     borderColor: 'black',
   },
   totalExpenses: {
+    color: 'black',
     fontSize: px(32),
   },
 });

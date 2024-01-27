@@ -1,5 +1,5 @@
-import {colors, layouts, spacing} from '@constants/styles';
-import px from '@utils/responsiveUI';
+import {colors, layouts, spacing} from '/constants/styles';
+import px from '/utils/responsiveUI';
 import {StyleSheet} from 'react-native';
 
 export default StyleSheet.create({
@@ -13,7 +13,7 @@ export default StyleSheet.create({
     justifyContent: 'space-between',
   },
   isPressed: {
-    borderBottomColor: colors.primary,
+    borderBottomColor: colors.lightBlue,
     borderBottomWidth: 5,
     borderRadius: px(5),
   },

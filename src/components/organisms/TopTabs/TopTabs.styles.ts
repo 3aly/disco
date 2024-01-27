@@ -1,5 +1,5 @@
-import {colors, layouts, spacing} from '@constants/styles';
-import px from '@utils/responsiveUI';
+import {colors, layouts, spacing} from '/constants/styles';
+import px from '/utils/responsiveUI';
 import {StyleSheet} from 'react-native';
 
 export default StyleSheet.create({
@@ -19,18 +19,19 @@ export default StyleSheet.create({
     ...layouts.px.xl,
   },
   isPressed: {
-    borderBottomColor: colors.primary,
+    borderBottomColor: colors.blue,
     borderBottomWidth: px(3),
   },
   name: {
     textAlign: 'center',
     fontSize: px(18),
+    color: 'black',
   },
   tab: {
     // backgroundColor: "green",
     ...layouts.py.mlg,
     ...layouts.mx.mlg,
-    borderBottomColor: colors.primary,
+    borderBottomColor: colors.blue,
     // borderBottomWidth: px(3),
     // textAlign: "center",
   },

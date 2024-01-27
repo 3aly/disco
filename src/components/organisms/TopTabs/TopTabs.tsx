@@ -12,7 +12,7 @@ import {
   Pressable,
   Text,
 } from 'react-native';
-import {colors} from '@constants/styles';
+import {colors} from '/constants/styles';
 
 type ITap = {
   id: number;
@@ -89,7 +89,7 @@ const FilterScrollTabs = ({
                     style={[
                       styles.name,
                       {
-                        color: activeTab === tab.id ? colors.primary : 'black',
+                        color: activeTab === tab.id ? colors.blue : '',
                       },
                     ]}>
                     {tab.name}

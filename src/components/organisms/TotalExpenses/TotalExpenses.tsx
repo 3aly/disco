@@ -7,11 +7,15 @@ import {Expense, ExpensesHeader} from '/components';
 import {ExpensesType} from 'types';
 import {limiter, shuffler} from 'utils';
 import {ExpenseItemSkeleton, TransactionItemSkeleton} from 'skeleton';
+import {useDispatch} from 'react-redux';
+import {setTotal} from 'store/expensesReducer';
 
 type props = {Expenses: Array<ExpensesType>; isLoading: boolean};
 
 const TotalExpenses = ({Expenses, isLoading}: props) => {
-  const totalExpenses = 5000;
+  // const dispatch = useDispatch();
+
+  const totalExpenses = Expenses?.reduce((sum, item) => sum + item.price, 0);
 
   const renderItem = ({item}) => {
     return (
@@ -26,7 +30,7 @@ const TotalExpenses = ({Expenses, isLoading}: props) => {
   };
   return (
     <>
-      <ExpensesHeader title={'Total Expenses'} targetAmount={5000} />
+      <ExpensesHeader title={'Total Expenses'} targetAmount={totalExpenses} />
       {isLoading ? (
         <>
           {[...new Array(3)]?.map((_, key) => {

@@ -1,1 +1,7 @@
-{}
+{
+  "all": "All",
+  "personal": "Personal",
+  "work": "Work",
+  "total_expenses": "Total Expenses",
+  "transactions": "Transactions"
+}

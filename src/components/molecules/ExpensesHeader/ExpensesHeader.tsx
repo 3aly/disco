@@ -1,5 +1,5 @@
 import {View, Text} from 'react-native';
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import styles from './ExpensesHeader.styles';
 
 const ExpensesHeader = ({
@@ -9,21 +9,25 @@ const ExpensesHeader = ({
   title: string;
   targetAmount: number;
 }) => {
+  const animationDuration = 500; // in milliseconds
+  const framesPerSecond = 60; // adjust as needed
+
   const [currentValue, setCurrentValue] = useState(0);
-  const step = targetAmount / 1000;
+  const totalFrames = (animationDuration / 1000) * framesPerSecond;
+  const step = targetAmount / totalFrames;
 
-  // useEffect(() => {
-  //   const intervalId = setInterval(() => {
-  //     setCurrentValue((prevValue) => prevValue + step);
-  //     // Ensure currentValue does not exceed targetAmount
-  //     if (currentValue >= targetAmount) {
-  //       setCurrentValue(targetAmount);
-  //       clearInterval(intervalId);
-  //     }
-  //   }, 1000);
+  useEffect(() => {
+    if (currentValue < targetAmount) {
+      const intervalId = setInterval(() => {
+        setCurrentValue(prevValue => {
+          const newValue = prevValue + step;
+          return newValue >= targetAmount ? targetAmount : newValue;
+        });
+      }, 1000 / framesPerSecond);
 
-  //   return () => clearInterval(intervalId);
-  // }, [targetAmount, step]);
+      return () => clearInterval(intervalId);
+    }
+  }, [currentValue, targetAmount, step, framesPerSecond]);
 
   return (
     <View style={styles.container}>

@@ -14,7 +14,6 @@ const TotalExpenses = ({Expenses, isLoading}: props) => {
   const totalExpenses = 5000;
 
   const renderItem = ({item}) => {
-    console.log('total_expenses: ', t('total_expenses'));
     return (
       <>
         <Expense

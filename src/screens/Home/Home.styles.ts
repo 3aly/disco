@@ -5,7 +5,6 @@ const styles = StyleSheet.create({
   container: {
     ...layouts.flexed,
     backgroundColor: 'white',
-    // ...layouts.allCentered,
   },
 });
 

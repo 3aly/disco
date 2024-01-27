@@ -4,14 +4,19 @@ import styles from './Home.styles';
 import {Header, TopTabs, TotalExpenses, Transactions} from 'components';
 import {useFetchExpenses, useFetchTransactions} from 'hooks';
 import {
+  filterHelper,
   generateRandomDate,
   generateRandomIcon,
   generateRandomLabel,
 } from 'utils';
 import {ExpensesType, TransactionType} from 'types';
+import {Tabs} from 'fakers';
 
 const Home = () => {
   const [selectedTab, setSelectedTab] = useState(0);
+  const [selectedTabName, setSelectedTabName] = useState<
+    'All' | 'Work' | 'Personal'
+  >('All');
   const [alteredTransactions, setAlteredTransactions] = useState<
     Array<TransactionType>
   >([]);
@@ -19,12 +24,15 @@ const Home = () => {
     [],
   );
 
-  const handlePress = (_: string, id: number) => {
+  const handlePress = (name: 'All' | 'Work' | 'Personal', id: number) => {
     setSelectedTab(id);
+    setSelectedTabName(name);
   };
+
   const {data: TransactionsData, isLoading: isTransactionsLoading} =
     useFetchTransactions();
   const {data: ExpensesData, isLoading: isExpensesLoading} = useFetchExpenses();
+
   useEffect(() => {
     const tamp = TransactionsData?.map((item: TransactionType) => {
       return {
@@ -55,65 +63,17 @@ const Home = () => {
         onPressFn={handlePress}
         initialTab={0}
         activeTab={selectedTab}
-        Tabs={[
-          {
-            id: 0,
-            name: 'All',
-          },
-          {
-            id: 1,
-            name: 'Personal',
-          },
-          {
-            id: 2,
-            name: 'Work',
-          },
-        ]}
+        Tabs={Tabs}
       />
-      {selectedTab === 0 && (
-        <>
-          <TotalExpenses
-            Expenses={alteredExpenses}
-            isLoading={isExpensesLoading}
-          />
-          <Transactions
-            isLoading={isTransactionsLoading}
-            Transactions={alteredTransactions}
-          />
-        </>
-      )}
-      {selectedTab === 1 && (
-        <>
-          <TotalExpenses
-            isLoading={isExpensesLoading}
-            Expenses={alteredExpenses?.filter(item => {
-              return item.label === 'Personal';
-            })}
-          />
-          <Transactions
-            isLoading={isTransactionsLoading}
-            Transactions={alteredTransactions?.filter(item => {
-              return item.label === 'Personal';
-            })}
-          />
-        </>
-      )}
-      {selectedTab === 2 && (
-        <>
-          <TotalExpenses
-            isLoading={isExpensesLoading}
-            Expenses={alteredExpenses?.filter(item => {
-              return item.label === 'Personal';
-            })}
-          />
-          <Transactions
-            isLoading={isTransactionsLoading}
-            Transactions={alteredTransactions?.filter(item => {
-              return item.label === 'Work';
-            })}
-          />
-        </>
-      )}
+
+      <TotalExpenses
+        Expenses={filterHelper(alteredExpenses, selectedTabName)}
+        isLoading={isExpensesLoading}
+      />
+      <Transactions
+        isLoading={isTransactionsLoading}
+        Transactions={filterHelper(alteredTransactions, selectedTabName)}
+      />
     </View>
   );
 };

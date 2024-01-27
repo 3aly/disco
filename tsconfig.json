@@ -6,7 +6,7 @@
     "paths": {
       "*": ["src/*"],
       "tests": ["tests/*"],
-      "/components/*": ["src/components/*"],
+      "@components/*": ["src/components/*"],
       "/utils/*": ["src/utils/*"],
       "/navigation/*": ["src/navigation/*"],
       "/types/*": ["src/types/*"],

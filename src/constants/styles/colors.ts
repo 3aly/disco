@@ -1,8 +1,18 @@
-export const blue = '#0052CC';
-export const lightBlue = '#33C2E3';
-export const green = '#59BA47';
+const blue = '#0052CC';
+const lightBlue = '#33C2E3';
+const green = '#59BA47';
 
-export const red = '#E5233D';
-export const yellow = '#FFC828';
-export const white = '#ffff';
-export const black = '#0000';
+const red = '#E5233D';
+const yellow = '#FFC828';
+const white = '#ffff';
+const black = '#0000';
+
+export const colors = {
+  blue,
+  lightBlue,
+  green,
+  yellow,
+  red,
+  white,
+  black,
+};

@@ -89,7 +89,7 @@ const FilterScrollTabs = ({
                     style={[
                       styles.name,
                       {
-                        color: activeTab === tab.id ? colors.primary : 'black',
+                        color: activeTab === tab.id ? colors.blue : '',
                       },
                     ]}>
                     {tab.name}

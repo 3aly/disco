@@ -19,7 +19,8 @@ export default StyleSheet.create({
   },
   title: {
     fontSize: px(20),
+    color: 'black',
   },
   icon: {},
-  percentage: {fontSize: px(20)},
+  percentage: {fontSize: px(20), color: 'black'},
 });

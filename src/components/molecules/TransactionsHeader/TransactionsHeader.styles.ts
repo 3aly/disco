@@ -14,6 +14,7 @@ export default StyleSheet.create({
 
   title: {
     fontSize: px(28),
+    color: 'black',
   },
   icon: {
     borderWidth: 1,

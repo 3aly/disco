@@ -11,10 +11,11 @@ export default StyleSheet.create({
     ...layouts.py.md,
     ...layouts.px.xl,
   },
-  date: {},
+  date: {color: 'black'},
   title: {
     fontSize: px(14),
+    color: 'black',
   },
   icon: {},
-  percentage: {fontSize: px(16)},
+  percentage: {fontSize: px(16), color: 'black'},
 });

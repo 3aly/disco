@@ -13,7 +13,7 @@ export default StyleSheet.create({
     justifyContent: 'space-between',
   },
   isPressed: {
-    borderBottomColor: colors.primary,
+    borderBottomColor: colors.blue,
     borderBottomWidth: 5,
     borderRadius: px(5),
   },

@@ -19,18 +19,19 @@ export default StyleSheet.create({
     ...layouts.px.xl,
   },
   isPressed: {
-    borderBottomColor: colors.primary,
+    borderBottomColor: colors.blue,
     borderBottomWidth: px(3),
   },
   name: {
     textAlign: 'center',
     fontSize: px(18),
+    color: 'black',
   },
   tab: {
     // backgroundColor: "green",
     ...layouts.py.mlg,
     ...layouts.mx.mlg,
-    borderBottomColor: colors.primary,
+    borderBottomColor: colors.blue,
     // borderBottomWidth: px(3),
     // textAlign: "center",
   },

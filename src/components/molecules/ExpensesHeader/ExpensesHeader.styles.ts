@@ -15,6 +15,7 @@ export default StyleSheet.create({
   title: {
     fontSize: px(12),
     fontWeight: 'bold',
+    color: 'black',
   },
   icon: {
     borderWidth: 1,
@@ -26,6 +27,7 @@ export default StyleSheet.create({
     borderColor: 'black',
   },
   totalExpenses: {
+    color: 'black',
     fontSize: px(32),
   },
 });

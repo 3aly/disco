@@ -12,7 +12,8 @@
       "/types/*": ["src/types/*"],
       "/screens/*": ["src/screens/*"],
       "/constants/*": ["src/constants/*"],
-      "/assets/*": ["src/assets/*"]
+      "/assets/*": ["src/assets/*"],
+      "/skeleton/*": ["src/skeleton/*"]
     }
   }
 }

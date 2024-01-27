@@ -6,23 +6,21 @@ export default StyleSheet.create({
   tabsContainer: {
     ...layouts.row,
     ...layouts.justifyBetween,
-    backgroundColor: 'red',
   },
-  fullWidth: {
-    backgroundColor: 'white',
-    justifyContent: 'space-between',
+  skeleton: {
+    ...layouts.my.xs,
+    ...layouts.mx.xxl,
   },
   isPressed: {
     borderBottomColor: colors.lightBlue,
-    borderBottomWidth: 5,
+    borderBottomWidth: px(5),
     borderRadius: px(5),
   },
   tab: {
     ...layouts.py.mlg,
     ...layouts.mx.mlg,
-    textAlign: 'center',
   },
   container: {
-    backgroundColor: 'white',
+    backgroundColor: colors.white,
   },
 });

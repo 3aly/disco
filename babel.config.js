@@ -15,6 +15,7 @@ module.exports = {
           '/types': './src/types',
           '/constants': './src/constants',
           '/assets': './src/assets',
+          '/skeleton': './src/skeleton',
         },
       },
     ],

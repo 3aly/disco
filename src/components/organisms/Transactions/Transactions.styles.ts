@@ -6,15 +6,14 @@ export default StyleSheet.create({
   tabsContainer: {
     ...layouts.row,
     ...layouts.justifyBetween,
-    backgroundColor: 'red',
   },
-  fullWidth: {
-    backgroundColor: 'white',
-    justifyContent: 'space-between',
+  skeleton: {
+    ...layouts.my.md,
+    ...layouts.px.xl,
   },
   isPressed: {
     borderBottomColor: colors.blue,
-    borderBottomWidth: 5,
+    borderBottomWidth: px(5),
     borderRadius: px(5),
   },
   tab: {
@@ -23,6 +22,6 @@ export default StyleSheet.create({
     textAlign: 'center',
   },
   container: {
-    backgroundColor: 'white',
+    backgroundColor: colors.white,
   },
 });

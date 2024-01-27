@@ -72,19 +72,27 @@ const Home = () => {
       />
       {selectedTab === 0 && (
         <>
-          <TotalExpenses Expenses={alteredExpenses} />
-          <Transactions Transactions={alteredTransactions} />
+          <TotalExpenses
+            Expenses={alteredExpenses}
+            isLoading={isExpensesLoading}
+          />
+          <Transactions
+            isLoading={isTransactionsLoading}
+            Transactions={alteredTransactions}
+          />
         </>
       )}
       {selectedTab === 1 && (
         <>
           <TotalExpenses
-            Expenses={alteredExpenses.filter(item => {
+            isLoading={isExpensesLoading}
+            Expenses={alteredExpenses?.filter(item => {
               return item.label === 'Personal';
             })}
           />
           <Transactions
-            Transactions={alteredTransactions.filter(item => {
+            isLoading={isTransactionsLoading}
+            Transactions={alteredTransactions?.filter(item => {
               return item.label === 'Personal';
             })}
           />
@@ -93,12 +101,14 @@ const Home = () => {
       {selectedTab === 2 && (
         <>
           <TotalExpenses
-            Expenses={alteredExpenses.filter(item => {
+            isLoading={isExpensesLoading}
+            Expenses={alteredExpenses?.filter(item => {
               return item.label === 'Personal';
             })}
           />
           <Transactions
-            Transactions={alteredTransactions.filter(item => {
+            isLoading={isTransactionsLoading}
+            Transactions={alteredTransactions?.filter(item => {
               return item.label === 'Work';
             })}
           />

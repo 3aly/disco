@@ -1,6 +1,9 @@
 import {ViewStyle} from 'react-native';
 import {TransactionType} from './type';
-export type TransactionsProps = {Transactions: Array<TransactionType>};
+export type TransactionsProps = {
+  Transactions: Array<TransactionType>;
+  isLoading: boolean;
+};
 
 export type SvgProps = {
   source:

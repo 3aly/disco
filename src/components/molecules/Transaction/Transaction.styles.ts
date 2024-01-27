@@ -4,7 +4,7 @@ import {StyleSheet} from 'react-native';
 
 export default StyleSheet.create({
   container: {
-    backgroundColor: 'white',
+    backgroundColor: colors.white,
     ...layouts.row,
     ...layouts.justifyBetween,
     ...layouts.yCentered,
@@ -15,17 +15,17 @@ export default StyleSheet.create({
   date: {color: colors.grey},
   title: {
     fontSize: px(14),
-    color: 'black',
+    color: colors.black,
   },
   dataContainer: {
     ...layouts.row,
     ...layouts.justifyBetween,
   },
   image: {
-    width: 50,
-    height: 50,
+    width: px(45),
+    height: px(45),
     borderRadius: px(25),
     ...layouts.me.xl,
   },
-  percentage: {fontSize: px(16), color: 'black'},
+  percentage: {fontSize: px(16), color: colors.black},
 });

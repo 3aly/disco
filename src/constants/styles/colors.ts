@@ -6,6 +6,7 @@ const red = '#E5233D';
 const yellow = '#FFC828';
 const white = '#ffff';
 const black = '#0000';
+const grey = '#808081';
 
 export const colors = {
   blue,
@@ -15,4 +16,5 @@ export const colors = {
   red,
   white,
   black,
+  grey,
 };

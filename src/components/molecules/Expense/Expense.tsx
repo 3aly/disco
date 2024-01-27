@@ -1,7 +1,7 @@
 import {View, Text} from 'react-native';
 import React from 'react';
 import styles from './Expense.styles';
-import {SVG} from 'components/atoms';
+import {Pill, SVG} from '/components';
 
 const Expense = ({
   icon,
@@ -10,7 +10,7 @@ const Expense = ({
 }: {
   icon: 'Home' | 'Profile';
   title: string;
-  percentage: number;
+  percentage: string;
 }) => {
   return (
     <View style={styles.container}>
@@ -18,7 +18,7 @@ const Expense = ({
         <SVG source={icon} />
         <Text style={styles.title}>{title}</Text>
       </View>
-      <Text style={styles.percentage}>{percentage}%</Text>
+      <Pill text={`${percentage}%`} color="green" />
     </View>
   );
 };

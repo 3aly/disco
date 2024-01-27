@@ -11,12 +11,11 @@ const ExpenseItemSkeleton = () => {
       backgroundColor={`${colors.blue}`}>
       <SkeletonPlaceholder.Item
         flexDirection="row"
-        width={'100%'}
         justifyContent="space-between">
         <SkeletonPlaceholder.Item>
           <SkeletonPlaceholder.Item flexDirection="row">
             <SkeletonPlaceholder.Item
-              width={px(25)}
+              width={px(28)}
               height={px(30)}
               borderRadius={px(5)}
               alignSelf="center"
@@ -24,7 +23,7 @@ const ExpenseItemSkeleton = () => {
             <SkeletonPlaceholder.Item
               width={px(75)}
               alignSelf="center"
-              height={px(20)}
+              height={px(22)}
               borderRadius={px(5)}
               marginHorizontal={px(12)}
             />
@@ -32,11 +31,10 @@ const ExpenseItemSkeleton = () => {
         </SkeletonPlaceholder.Item>
 
         <SkeletonPlaceholder.Item
-          width={px(30)}
-          height={px(20)}
+          width={px(35)}
+          height={px(22)}
           alignSelf="center"
-          borderRadius={px(5)}
-          marginBottom={px(10)}
+          borderRadius={px(20)}
         />
       </SkeletonPlaceholder.Item>
     </SkeletonPlaceholder>

@@ -1,4 +1,4 @@
-import {ViewStyle} from 'react-native';
+import {StyleProp, ViewStyle} from 'react-native';
 import {TransactionType} from './type';
 export type TransactionsProps = {
   Transactions: Array<TransactionType>;
@@ -18,4 +18,9 @@ export type SvgProps = {
   style?: ViewStyle;
   color?: string;
   onPress?: Function;
+};
+export type PillProps = {
+  text: string;
+  color: 'red' | 'green';
+  style?: StyleProp<ViewStyle>;
 };

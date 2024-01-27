@@ -14,7 +14,7 @@ const TotalExpenses = ({Expenses, isLoading}: props) => {
   const totalExpenses = 5000;
 
   const renderItem = ({item}) => {
-    console.log('item: ', item);
+    console.log('total_expenses: ', t('total_expenses'));
     return (
       <>
         <Expense
@@ -27,7 +27,7 @@ const TotalExpenses = ({Expenses, isLoading}: props) => {
   };
   return (
     <>
-      <ExpensesHeader title="Total Expenses" targetAmount={5000} />
+      <ExpensesHeader title={'Total Expenses'} targetAmount={5000} />
       {isLoading ? (
         <>
           {[...new Array(3)]?.map((_, key) => {
@@ -41,7 +41,7 @@ const TotalExpenses = ({Expenses, isLoading}: props) => {
       ) : (
         <>
           <FlatList
-            data={limiter(shuffler(Expenses), 6)}
+            data={limiter(shuffler(Expenses), 4)}
             renderItem={renderItem}
           />
         </>

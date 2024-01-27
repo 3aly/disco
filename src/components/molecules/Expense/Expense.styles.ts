@@ -21,5 +21,5 @@ export default StyleSheet.create({
     ...layouts.ms.md,
   },
   icon: {},
-  percentage: {fontSize: px(20), color: 'black'},
+  percentage: {fontSize: px(20), color: colors.green},
 });

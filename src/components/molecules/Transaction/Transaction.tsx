@@ -1,6 +1,7 @@
 import {View, Text, ImageProps, Image} from 'react-native';
 import React from 'react';
 import styles from './Transaction.styles';
+import {Pill} from 'components/atoms';
 
 const Transaction = ({image, title, date, invoice}) => {
   console.log('image', image);
@@ -19,7 +20,8 @@ const Transaction = ({image, title, date, invoice}) => {
           <Text style={styles.date}>{date}</Text>
         </View>
       </View>
-      <Text style={styles.percentage}>+ {invoice}$</Text>
+      <Pill text={`- ${invoice}$`} color="red" />
+      {/* <Text style={styles.percentage}>- </Text> */}
     </View>
   );
 };

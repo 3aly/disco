@@ -1,4 +1,4 @@
-import {colors, layouts, spacing} from '/constants/styles';
+import {colors, layouts} from '/constants';
 import px from '/utils/responsiveUI';
 import {StyleSheet} from 'react-native';
 
@@ -12,7 +12,7 @@ export default StyleSheet.create({
     ...layouts.px.xl,
   },
 
-  date: {color: colors.grey},
+  date: {color: colors.grey, fontSize: px(14)},
   title: {
     fontSize: px(14),
     color: colors.black,
@@ -27,5 +27,5 @@ export default StyleSheet.create({
     borderRadius: px(25),
     ...layouts.me.xl,
   },
-  percentage: {fontSize: px(16), color: colors.black},
+  percentage: {fontSize: px(16), color: colors.red},
 });

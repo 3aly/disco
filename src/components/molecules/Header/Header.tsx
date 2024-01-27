@@ -1,15 +1,22 @@
-import {View, Text} from 'react-native';
-import React from 'react';
+import {View, Text, Animated} from 'react-native';
+import React, {useEffect, useRef} from 'react';
 import styles from './Header.styles';
+import LinearGradient from 'react-native-linear-gradient';
+import {colors} from '/constants';
 
 const Header = ({title, number = 4}: {title: string; number: number}) => {
   return (
-    <View style={styles.container}>
+    <LinearGradient
+      angle={1}
+      colors={[`${colors.blue}`, `${colors.lightBlue}`]}
+      start={{x: 0.5, y: 0}} // Start at left center
+      end={{x: 1, y: 0.5}}
+      style={styles.container}>
       <Text style={styles.title}>{title}</Text>
       <View style={styles.circle}>
         <Text style={styles.number}>{number}</Text>
       </View>
-    </View>
+    </LinearGradient>
   );
 };
 

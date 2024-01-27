@@ -1,19 +1,20 @@
-import {colors, layouts, spacing} from '/constants/styles';
+import {colors, layouts, spacing} from '/constants';
 import px from '/utils/responsiveUI';
 import {StyleSheet} from 'react-native';
 
 export default StyleSheet.create({
   container: {
-    backgroundColor: 'white',
     ...layouts.row,
     ...layouts.justifyBetween,
     ...layouts.yCentered,
     ...layouts.py.xl,
-    ...layouts.my.xl,
     ...layouts.px.md,
+    borderStartEndRadius: px(2),
+    borderBottomWidth: px(2),
+    borderBottomColor: colors.yellow,
   },
   title: {
-    color: 'black',
+    color: colors.white,
 
     fontSize: px(32),
     fontWeight: 'bold',
@@ -25,7 +26,7 @@ export default StyleSheet.create({
     padding: 10,
     borderRadius: px(24),
     ...layouts.allCentered,
-    borderColor: 'black',
+    borderColor: colors.white,
   },
-  number: {fontSize: px(20)},
+  number: {fontSize: px(20), color: colors.white},
 });

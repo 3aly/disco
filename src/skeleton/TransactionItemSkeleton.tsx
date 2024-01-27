@@ -35,11 +35,10 @@ const TransactionItemSkeleton = () => {
         </SkeletonPlaceholder.Item>
 
         <SkeletonPlaceholder.Item
-          width={px(75)}
-          height={px(18)}
-          alignSelf={'flex-end'}
-          marginBottom={px(10)}
-          // marginEnd={px(10)}
+          width={px(35)}
+          height={px(22)}
+          alignSelf="center"
+          borderRadius={px(20)}
         />
       </SkeletonPlaceholder.Item>
     </SkeletonPlaceholder>

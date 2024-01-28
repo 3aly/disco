@@ -11,6 +11,7 @@ const Transactions = ({Transactions, isLoading}: TransactionsProps) => {
     return (
       <>
         <Transaction
+          key={item.id}
           image={item.image}
           title={item.title}
           price={item.price}

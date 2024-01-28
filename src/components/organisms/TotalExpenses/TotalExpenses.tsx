@@ -19,6 +19,7 @@ const TotalExpenses = ({Expenses, isLoading}: props) => {
     return (
       <>
         <Expense
+          key={item.id}
           title={item.category.name}
           percentage={item.price}
           icon={item.icon}

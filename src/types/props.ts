@@ -11,6 +11,13 @@ export type TransactionsProps = {
   Transactions: Array<TransactionItemType>;
   isLoading: boolean;
 };
+export type TransactionProps = {
+  image: string;
+  title: string;
+  label?: string;
+  price: number;
+  date: string;
+};
 
 export type SvgProps = {
   source: iconNames;

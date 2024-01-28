@@ -2,9 +2,9 @@ import {View, Text, ImageProps, Image} from 'react-native';
 import React, {useEffect, useState} from 'react';
 import styles from './Transaction.styles';
 import {Pill} from 'components/atoms';
-import {TransactionItemType} from 'types';
+import {TransactionProps} from 'types';
 
-const Transaction = ({image, title, date, price}: TransactionItemType) => {
+const Transaction = ({image, title, date, price}: TransactionProps) => {
   console.log('image', image);
   const animationDuration = 500;
   const framesPerSecond = 60;

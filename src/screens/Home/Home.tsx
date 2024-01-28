@@ -12,6 +12,7 @@ import {
 import {
   ExpenseItemType,
   ExpensesType,
+  FilterType,
   TransactionItemType,
   TransactionType,
 } from 'types';
@@ -19,9 +20,7 @@ import {Tabs} from 'fakers';
 
 const Home = () => {
   const [selectedTab, setSelectedTab] = useState(0);
-  const [selectedTabName, setSelectedTabName] = useState<
-    'All' | 'Work' | 'Personal'
-  >('All');
+  const [selectedTabName, setSelectedTabName] = useState<FilterType>('All');
   const [alteredTransactions, setAlteredTransactions] = useState<
     Array<TransactionItemType>
   >([]);
@@ -29,7 +28,7 @@ const Home = () => {
     Array<ExpenseItemType>
   >([]);
 
-  const handlePress = (name: 'All' | 'Work' | 'Personal', id: number) => {
+  const handlePress = (name: FilterType, id: number) => {
     setSelectedTab(id);
     setSelectedTabName(name);
   };

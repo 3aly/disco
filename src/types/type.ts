@@ -39,6 +39,7 @@ export type ITap = {
   name: string;
 };
 export type ExpenseItemType = {
+  id: number;
   category: {name: string};
   price: number;
   label?: string;
@@ -46,9 +47,12 @@ export type ExpenseItemType = {
   icon: iconNames;
 };
 export type TransactionItemType = {
+  id: number;
   image: string;
   title: string;
   label?: string;
   price: number;
   date: string;
 };
+
+export type FilterType = 'All' | 'Personal' | 'Work';

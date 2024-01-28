@@ -1,6 +1,5 @@
-import {ExpenseItemType, TransactionItemType} from 'types';
+import {ExpenseItemType, FilterType, TransactionItemType} from 'types';
 
-type FilterType = 'All' | 'Personal' | 'Work';
 interface Item {
   label: string;
 }

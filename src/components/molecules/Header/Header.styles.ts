@@ -8,6 +8,7 @@ export default StyleSheet.create({
     ...layouts.justifyBetween,
     ...layouts.yCentered,
     ...layouts.py.xl,
+    ...layouts.pt.xxl,
     ...layouts.px.md,
     borderStartEndRadius: px(2),
     borderBottomWidth: px(2),

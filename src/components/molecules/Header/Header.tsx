@@ -8,8 +8,8 @@ const Header = ({title, number = 4}: {title: string; number: number}) => {
   return (
     <LinearGradient
       angle={1}
-      colors={[`${colors.blue}`, `${colors.lightBlue}`]}
-      start={{x: 0.5, y: 0}} // Start at left center
+      colors={[`${colors.blue}`, `${colors.blue}`]}
+      start={{x: 0.8, y: 0}} // Start at left center
       end={{x: 1, y: 0.5}}
       style={styles.container}>
       <Text style={styles.title}>{title}</Text>

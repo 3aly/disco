@@ -1,19 +1,19 @@
 import {StyleProp, ViewStyle} from 'react-native';
-import {TransactionType} from './type';
+import {
+  ExpenseItemType,
+  ExpensesType,
+  ITap,
+  TransactionItemType,
+  TransactionType,
+  iconNames,
+} from './type';
 export type TransactionsProps = {
-  Transactions: Array<TransactionType>;
+  Transactions: Array<TransactionItemType>;
   isLoading: boolean;
 };
 
 export type SvgProps = {
-  source:
-    | 'Home'
-    | 'Retail'
-    | 'Profile'
-    | 'Search'
-    | 'Favorite'
-    | 'Notification'
-    | 'Note';
+  source: iconNames;
 
   style?: ViewStyle;
   color?: string;
@@ -23,4 +23,27 @@ export type PillProps = {
   text: string;
   color: 'red' | 'green';
   style?: StyleProp<ViewStyle>;
+};
+export type ExpenseProps = {
+  icon: iconNames;
+  title: string;
+  percentage: number;
+};
+export type ExpenseHeaderProps = {
+  title: string;
+  targetAmount: number;
+};
+export type HeaderProps = {
+  title: string;
+  number: number;
+};
+export type FilterScrollTabsProps = {
+  Tabs: ITap[];
+  onPressFn: Function;
+  activeTab: number;
+  initialTab?: number;
+};
+export type TotalExpensesProps = {
+  Expenses: Array<ExpensesType>;
+  isLoading: boolean;
 };

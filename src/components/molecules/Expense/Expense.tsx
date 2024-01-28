@@ -2,16 +2,9 @@ import {View, Text} from 'react-native';
 import React, {useEffect, useState} from 'react';
 import styles from './Expense.styles';
 import {Pill, SVG} from '/components';
+import {ExpenseProps} from 'types';
 
-const Expense = ({
-  icon,
-  title,
-  percentage: percentage,
-}: {
-  icon: 'Home' | 'Profile';
-  title: string;
-  percentage: number;
-}) => {
+const Expense = ({icon, title, percentage: percentage}: ExpenseProps) => {
   const animationDuration = 500;
   const framesPerSecond = 60;
 

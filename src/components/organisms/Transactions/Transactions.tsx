@@ -3,18 +3,17 @@ import React from 'react';
 import styles from './Transactions.styles';
 import {FlatList, View} from 'react-native';
 import {Transaction, TransactionsHeader} from '/components/molecules';
-import {TransactionsProps} from 'types';
+import {TransactionItemType, TransactionsProps} from 'types';
 import {TransactionItemSkeleton} from 'skeleton';
 
 const Transactions = ({Transactions, isLoading}: TransactionsProps) => {
-  const renderItem = ({item}) => {
-    console.log('item: ', item);
+  const renderItem = ({item}: {item: TransactionItemType}) => {
     return (
       <>
         <Transaction
           image={item.image}
           title={item.title}
-          invoice={item.price}
+          price={item.price}
           date={item.date}
         />
       </>
@@ -35,11 +34,7 @@ const Transactions = ({Transactions, isLoading}: TransactionsProps) => {
         </>
       ) : (
         <>
-          <FlatList
-            data={Transactions}
-            renderItem={renderItem}
-            // ListHeaderComponent={ListHeaderComponent}
-          />
+          <FlatList data={Transactions} renderItem={renderItem} />
         </>
       )}
     </>

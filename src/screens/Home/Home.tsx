@@ -9,7 +9,12 @@ import {
   generateRandomIcon,
   generateRandomLabel,
 } from 'utils';
-import {ExpensesType, TransactionType} from 'types';
+import {
+  ExpenseItemType,
+  ExpensesType,
+  TransactionItemType,
+  TransactionType,
+} from 'types';
 import {Tabs} from 'fakers';
 
 const Home = () => {
@@ -18,11 +23,11 @@ const Home = () => {
     'All' | 'Work' | 'Personal'
   >('All');
   const [alteredTransactions, setAlteredTransactions] = useState<
-    Array<TransactionType>
+    Array<TransactionItemType>
   >([]);
-  const [alteredExpenses, setAlteredExpenses] = useState<Array<ExpensesType>>(
-    [],
-  );
+  const [alteredExpenses, setAlteredExpenses] = useState<
+    Array<ExpenseItemType>
+  >([]);
 
   const handlePress = (name: 'All' | 'Work' | 'Personal', id: number) => {
     setSelectedTab(id);

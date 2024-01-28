@@ -3,8 +3,9 @@ import React, {useEffect, useRef} from 'react';
 import styles from './Header.styles';
 import LinearGradient from 'react-native-linear-gradient';
 import {colors} from '/constants';
+import {HeaderProps} from 'types';
 
-const Header = ({title, number = 4}: {title: string; number: number}) => {
+const Header = ({title, number = 4}: HeaderProps) => {
   return (
     <LinearGradient
       angle={1}

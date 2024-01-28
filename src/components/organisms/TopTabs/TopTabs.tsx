@@ -3,57 +3,19 @@ import React, {useRef, useEffect, useState} from 'react';
 import * as Animatable from 'react-native-animatable';
 
 import styles from './TopTabs.styles';
-import {
-  FlatList,
-  Dimensions,
-  Platform,
-  I18nManager,
-  View,
-  Pressable,
-  Text,
-} from 'react-native';
+import {FlatList, View, Pressable, Text} from 'react-native';
 import {colors} from '/constants/styles';
-
-type ITap = {
-  id: number;
-  name: string;
-};
-
-type props = {
-  Tabs: ITap[];
-  onPressFn: Function;
-  activeTab: number;
-  initialTab?: number;
-};
+import {FilterScrollTabsProps} from 'types';
 
 const FilterScrollTabs = ({
   Tabs,
   onPressFn = () => {},
   activeTab = 0,
   initialTab = 0,
-}: props) => {
-  const flatListRef = useRef<FlatList>(null);
-  const [tabWidth, setTabWidth] = useState<string | number>('auto');
-  const adjustScreenWidth = () => {
-    const containerWidth = Dimensions.get('window').width;
-    const calculatedWidth = containerWidth / Tabs.length;
-    setTabWidth(calculatedWidth);
-  };
-
-  useEffect(() => {
-    adjustScreenWidth();
-
-    // if (Tabs?.length === 2) {
-    //   adjustScreenWidth();
-    // } else {
-    //   setTabWidth("auto");
-    // }
-  }, [Tabs]);
-
+}: FilterScrollTabsProps) => {
   return (
     <View>
       <FlatList
-        ref={flatListRef}
         contentContainerStyle={styles.listContainer}
         onScrollToIndexFailed={err => {
           console.log(err);
@@ -67,14 +29,6 @@ const FilterScrollTabs = ({
             <Pressable
               onPress={() => {
                 onPressFn(tab.name, tab.id);
-                flatListRef.current?.scrollToIndex({
-                  animated: true,
-                  index:
-                    I18nManager.isRTL && Platform.OS === 'ios'
-                      ? Tabs?.length - 1 - index
-                      : index,
-                  viewPosition: Platform.OS === 'ios' ? 1 : 0.5,
-                });
               }}
               style={[styles.container]}>
               <View

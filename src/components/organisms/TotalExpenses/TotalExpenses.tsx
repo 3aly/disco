@@ -4,20 +4,18 @@ import React, {useRef, useEffect, useState, memo} from 'react';
 import styles from './TotalExpenses.styles';
 import {FlatList, View, Text} from 'react-native';
 import {Expense, ExpensesHeader} from '/components';
-import {ExpensesType} from 'types';
+import {ExpenseItemType, ExpensesType} from 'types';
 import {limiter, shuffler} from 'utils';
-import {ExpenseItemSkeleton, TransactionItemSkeleton} from 'skeleton';
-import {useDispatch} from 'react-redux';
-import {setTotal} from 'store/expensesReducer';
+import {ExpenseItemSkeleton} from 'skeleton';
 
-type props = {Expenses: Array<ExpensesType>; isLoading: boolean};
+type props = {Expenses: Array<ExpenseItemType>; isLoading: boolean};
 
 const TotalExpenses = ({Expenses, isLoading}: props) => {
   // const dispatch = useDispatch();
 
   const totalExpenses = Expenses?.reduce((sum, item) => sum + item.price, 0);
 
-  const renderItem = ({item}) => {
+  const renderItem = ({item}: {item: ExpenseItemType}) => {
     return (
       <>
         <Expense

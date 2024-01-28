@@ -1,14 +1,9 @@
 import {View, Text} from 'react-native';
 import React, {useState, useEffect} from 'react';
 import styles from './ExpensesHeader.styles';
+import {ExpenseHeaderProps} from 'types';
 
-const ExpensesHeader = ({
-  targetAmount,
-  title,
-}: {
-  title: string;
-  targetAmount: number;
-}) => {
+const ExpensesHeader = ({targetAmount, title}: ExpenseHeaderProps) => {
   const animationDuration = 500;
   const framesPerSecond = 60;
 

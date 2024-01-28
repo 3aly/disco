@@ -2,28 +2,29 @@ import {View, Text, ImageProps, Image} from 'react-native';
 import React, {useEffect, useState} from 'react';
 import styles from './Transaction.styles';
 import {Pill} from 'components/atoms';
+import {TransactionItemType} from 'types';
 
-const Transaction = ({image, title, date, invoice}) => {
+const Transaction = ({image, title, date, price}: TransactionItemType) => {
   console.log('image', image);
   const animationDuration = 500;
   const framesPerSecond = 60;
 
   const [currentValue, setCurrentValue] = useState(0);
   const totalFrames = (animationDuration / 1000) * framesPerSecond;
-  const step = invoice / totalFrames;
+  const step = price / totalFrames;
 
   useEffect(() => {
-    if (currentValue < invoice) {
+    if (currentValue < price) {
       const intervalId = setInterval(() => {
         setCurrentValue(prevValue => {
           const newValue = prevValue + step;
-          return newValue >= invoice ? invoice : newValue;
+          return newValue >= price ? price : newValue;
         });
       }, 1000 / framesPerSecond);
 
       return () => clearInterval(intervalId);
     }
-  }, [currentValue, invoice, step, framesPerSecond]);
+  }, [currentValue, price, step, framesPerSecond]);
 
   return (
     <View style={styles.container}>

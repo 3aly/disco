@@ -26,3 +26,29 @@ export type ExpensesType = {
   percentage: number;
   label: string;
 };
+export type iconNames =
+  | 'Home'
+  | 'Retail'
+  | 'Profile'
+  | 'Search'
+  | 'Favorite'
+  | 'Notification'
+  | 'Note';
+export type ITap = {
+  id: number;
+  name: string;
+};
+export type ExpenseItemType = {
+  category: {name: string};
+  price: number;
+  label?: string;
+
+  icon: iconNames;
+};
+export type TransactionItemType = {
+  image: string;
+  title: string;
+  label?: string;
+  price: number;
+  date: string;
+};
